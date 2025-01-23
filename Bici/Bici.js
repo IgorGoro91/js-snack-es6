@@ -33,4 +33,14 @@ const bicicleta = [
     }
 ]
 
-console.log(`il peso minore della bici ${bicicleta[1].peso}`)
+let biciPiuLeggera = bicicleta[0]
+
+for(let i = 0; i < bicicleta.length; i++){
+    let elemento = bicicleta[i]
+
+    if(elemento.peso < biciPiuLeggera.peso){
+        biciPiuLeggera = elemento
+    }
+}
+
+console.log(biciPiuLeggera)

@@ -14,20 +14,26 @@ let squadre = [
     { nome: "Vicenza", punti: 0, falliSubiti: 0 }
 ];
 
-console.log(squadre)
+
 
 function generaNumeroRandom(min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
-squadre.forEach(squadra => {
-    squadra.punti = generaNumeroRandom(0, 100);
-    squadra.falliSubiti = generaNumeroRandom(0, 50);
-});
+let newArray =[]
+for(const index in squadre){
 
-let nomiEFalli = squadre.map(squadra => {
-    return { nome: squadra.nome, falliSubiti: squadra.falliSubiti };
-});
+    let elemento = squadre[index]
 
+    elemento.punti = generaNumeroRandom(1, 50)
+    elemento.falliSubiti = generaNumeroRandom(1, 50)
 
-console.log("Nuovo array :", nomiEFalli);
+    newArray.push(
+        {
+            nome: elemento["nome"],
+            falliSubiti: elemento["falliSubiti"]
+        }
+    )
+}
+
+console.log( squadre, newArray)
